@@ -7,7 +7,8 @@ void sigint_handler(int sig){
 	_exit(1);
 }
 int main(){
-	int arr[2],err, ret, a=1, count=0;
+	int arr[2],err, ret,count=0;
+	char ch='A';
 	
 	struct sigaction sa;
 	sa.sa_handler = sigint_handler;
@@ -19,7 +20,7 @@ int main(){
 	ret = pipe(arr);
 
 	while(1){
-		write(arr[1], &a, sizeof(a));
+		write(arr[1], &ch, sizeof(ch));
 		count++;
 		printf("bytes written: %d\n",count);
 	}
