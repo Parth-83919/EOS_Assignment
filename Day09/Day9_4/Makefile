@@ -2,7 +2,7 @@
 TARGET=main
 
 CSRCS= $(TARGET).c
-CSRCS+= 
+CSRCS+= circle.c square.c rectangle.c
 
 COBJS=$(CSRCS:.c=.o)
 
@@ -24,7 +24,7 @@ run:
 
 # Rule 4 - for cleanning
 clean:
-	rm $(TARGET).out $(COBJS)
+	rm -f $(TARGET).out $(COBJS)
 
 .phony: run clean
 
